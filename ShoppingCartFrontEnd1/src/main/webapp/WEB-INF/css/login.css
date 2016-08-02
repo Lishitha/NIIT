@@ -1,0 +1,23 @@
+@CHARSET "ISO-8859-1";
+#box{ 
+	text-align:center;
+	width:200px;
+	height:200px;
+	
+	padding:50px;
+	margin:0 auto;
+	
+   }
+
+
+h1 {text-align:center;
+	padding:50px;
+}
+form {text-align:center;}
+#login{
+       text-align:center;
+       height:200px;
+       width:200px;
+       background-color:light-gray;
+       color:green;
+      }
