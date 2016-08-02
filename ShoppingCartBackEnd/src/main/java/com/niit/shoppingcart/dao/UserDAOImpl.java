@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.shoppingcart.model.User;
+import com.niit.shoppingcart.model.UserDetails;
 
 @Repository("userDAO")
 
@@ -26,6 +27,13 @@ public class UserDAOImpl implements UserDAO{
 	public void saveOrUpdate(User user) {
 		sessionFactory.getCurrentSession().saveOrUpdate(user);
 	};
+	
+	
+	@Transactional
+	public void saveOrUpdate(UserDetails userDetails) {
+		sessionFactory.getCurrentSession().saveOrUpdate(userDetails);
+	}
+	
 	
 	@Transactional
 	public void delete(String id){
@@ -56,6 +64,28 @@ public class UserDAOImpl implements UserDAO{
 		return listUser;
 		     
 	}
+	
+	@Transactional
+	public boolean isValidUser(String id, String password, boolean isAdmin) {
+		String hql = "from User where id= '" + id + "' and " + " password ='" + password+"'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<User> list = (List<User>) query.list();
+		
+		if (list != null && !list.isEmpty())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+
+		}
+		
+			}
+	
+	
 	
 	
 
