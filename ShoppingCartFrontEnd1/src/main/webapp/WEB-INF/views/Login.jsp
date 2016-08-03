@@ -15,13 +15,14 @@
 
 
 
-	<H1 style="text-align: center; font-size: 400%; font-family: verdana; color: #FFFFFF">LOGIN</H1>
+	<H1 style="text-align: center; font-size: 200%; font-family: verdana; color: #FFFFFF">LOGIN</H1>
     
-    ${msg}
+    
 		<c:url var="action" value="/login_to_enter"></c:url>
 	
 	
-		<form:form action="isValidUser" method="post">
+		<form:form action="${action}" method="post">
+		
 			<table align="center">
 				<tr>
 					<td> <input type="text" name="userName" autofocus
@@ -44,7 +45,7 @@
 				</tr>
 			</table>
 		</form:form>
-	</div>
+	
 
 </body>
 

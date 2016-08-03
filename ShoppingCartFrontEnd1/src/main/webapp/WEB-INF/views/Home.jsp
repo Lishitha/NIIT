@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -22,22 +23,33 @@
 
 	<table width="100%">
 		<tr>
-			<c:choose>
-				<c:when test="${empty loggedInUser}">
+		
+				
 					<td align="left" ><a href="login"
 						style="textfont-size: 200%; font-family: verdana; color: #FFFFFF">Login</a></td>
+						
 					<td align="right" ><a href="register"
 						style="textfont-size: 200%; font-family: verdana; color: #FFFFFF">Register</a></td>
-				</c:when>
-				
-				<c:when test="${not empty loggedInUser }">
-				<td>WELCOME $loggedInUser</td>
-				<td>  <a href="logOut" align="right"></td>
-				</c:when>
-				
-			</c:choose>
+						
+			
 		</tr>
 	</table>
+	
+	<div id="login">
+		<c:if
+			test="${isUserClickedLogin==true || invalidCredentials==true}">
+			<div id="error">${errorMessage}</div>
+			<%@ include file="Login.jsp"%>
+
+		</c:if>
+	</div>
+
+	<div id="register">
+		<c:if test="${isUserClickedRegister==true}">
+			<%@ include file="Register.jsp"%>
+
+		</c:if>
+	</div>
 	
 
 </body>

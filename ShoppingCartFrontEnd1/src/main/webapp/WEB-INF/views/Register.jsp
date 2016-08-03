@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -8,10 +12,13 @@
 </head>
 <body background="C:\Users\LISHITHA K A\workspace\ShoppingCartFrontEnd1\src\main\webapp\WEB-INF\images\Website-Background.png" style="background-color:#E8DAEF;">>
 
-<H1 style="text-align: center; font-size: 400%; font-family: verdana; color: #FFFFFF">REGISTER</H1>
+<H1 style="text-align: center; font-size: 200%; font-family: verdana; color: #FFFFFF">REGISTER</H1>
 
 	<div id="box">
-		<form:form action="isValidUser" method="post">
+	     <c:url var="action" value="/here/register"></c:url>
+	
+	
+		 <form:form action="${action}" method="post" modelAttribute="user">
 			<table align="center">
 				<tr>
 					<td> <input type="text" name="id" autofocus required id="id" 
