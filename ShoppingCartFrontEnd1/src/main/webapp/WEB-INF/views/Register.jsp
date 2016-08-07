@@ -15,10 +15,11 @@
 <H1 style="text-align: center; font-size: 200%; font-family: verdana; color: #FFFFFF">REGISTER</H1>
 
 	<div id="box">
+	
 	     <c:url var="action" value="/here/register"></c:url>
-	
-	
+	     <!--  to use the form to submit the data - modelAttribute  -->
 		 <form:form action="${action}" method="post" modelAttribute="user">
+		 
 			<table align="center">
 				<tr>
 					<td> <input type="text" name="id" autofocus required id="id" 
@@ -27,37 +28,32 @@
 				</tr>
 
 				<tr>
-					<td><input type="text" name="userName" autofocus required id="userName" 
+					<td><input type="text" name="name" autofocus required id="userName" 
             placeholder="Enter your Name" title="Enter a valid user name">
 					</td>
 				</tr>
 				
 				<tr>
-					<td><input type="password" name="pwd" autofocus required id="pwd" 
+					<td><input type="password" name="password" autofocus required id="pwd" 
             placeholder="Enter passWord" title="Enter a secure password">
 					</td>
 				</tr>
 				
-				<tr>
-					<td><input type="password" name="cpwd" autofocus required id="cpwd" 
-            placeholder="Confirm passWord" title="Enter the same password">
-					</td>
-				</tr>
 				
 				<tr>
-				<td><input type="number" name="moblieNumber" autofocus required id="moblieNumber" 
+				<td><input type="number" name="contactNumber" autofocus required id="moblieNumber" 
             placeholder="Mobile Number" title="Enter Your Mobile Number">
 					</td>
 				</tr>
 				
 				<tr>
-				<td><input type="email" name="userEmail" autofocus required id="userEmail" 
+				<td><input type="email" name="mailID" autofocus required id="userEmail" 
             placeholder="E-Mail Id" title="Enter a Your Mail Id">
 					</td>
 				</tr>
 				
 				<tr>
-				<td><input type="text" name="userAddress" autofocus required id="userAddress" 
+				<td><input type="text" name="address" autofocus required id="userAddress" 
             placeholder="Address" title="Enter Your Address">
 					</td>
 				</tr>

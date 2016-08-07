@@ -18,10 +18,8 @@
 	<H1 style="text-align: center; font-size: 200%; font-family: verdana; color: #FFFFFF">LOGIN</H1>
     
     
-		<c:url var="action" value="/login_to_enter"></c:url>
-	
-	
-		<form:form action="${action}" method="post">
+		<c:url var="action" value="/login_to_enter" ></c:url>
+	    <form:form action="${action}" method="post" style="color: #FFFFFF">
 		
 			<table align="center">
 				<tr>
