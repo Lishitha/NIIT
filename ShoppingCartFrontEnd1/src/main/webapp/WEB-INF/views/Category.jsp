@@ -10,14 +10,14 @@
 <title>Category</title>
 </head>
 <body>
-<h2>ADD CATEGORY</h2>
-	<c:url var="addCategory" value="to_add_category"></c:url>
+<h2 style="text-align: center; font-family: verdana; color: #FFFFFF">ADD CATEGORY</h2>
+	 <c:url var="addCategory" value="to_add_category"></c:url>
 	<form:form action="${addCategory }" commandName="category">
 
-		<table>
+		<table align="center">
 			<tr>
-				<td><form:label path="id">
-						<spring:message text="CategoryID" />
+				<td style=" font-family: verdana; color: #FFFFFF"><form:label path="id">
+						<spring:message text="ID"   />
 					</form:label></td>
 				<c:choose>
 
@@ -34,22 +34,22 @@
 			</tr>
 
 			<tr>
-				<td><form:label path="name">
-						<spring:message text="CategoryName"></spring:message>
+				<td style=" font-family: verdana; color: #FFFFFF"><form:label path="name">
+						<spring:message text="Name"></spring:message>
 					</form:label></td>
 				<td><form:input path="name" required="true"></form:input></td>
 			</tr>
 
 			<tr>
-				<td><form:label path="description">
-						<spring:message text="CategoryDescription"></spring:message>
+				<td style=" font-family: verdana; color: #FFFFFF"><form:label path="description">
+						<spring:message text="Description"></spring:message>
 					</form:label></td>
 				<td><form:input path="description" required="true"></form:input></td>
 			</tr>
 
 			<tr>
 				<!-- if the category is already exist, then edit -->
-				<td colspan="2"><c:if test="${!empty category.name }">
+				<td colspan="2" align="center"><c:if test="${!empty category.name }">
 						<input type="submit"
 							value="<spring:message text="Edit"></spring:message>">
 					</c:if> <c:if test="${empty category.name}">
@@ -61,26 +61,25 @@
 	</form:form>
 
 	<br>
-	<br>
-	<br>
-	<h2>LIST OF CATEGORIES</h2>
+	
+	<h2 style=" font-family: verdana; color: #FFFFFF;text-align: center">LIST OF CATEGORIES</h2>
 	<c:if test="${!empty categoryList}">
-		<table>
+		<table align="center">
 			<tr>
-				<th> ID</th>
-				<th> NAME</th>
-				<th> DESCRIPTION</th>
-				<th> EDIT</th>
-				<th> DELETE</th>
+				<th style=" font-family: verdana; color: #FFFFFF"> ID</th>
+				<th style=" font-family: verdana; color: #FFFFFF"> NAME</th>
+				<th style=" font-family: verdana; color: #FFFFFF"> DESCRIPTION</th>
+				<th style=" font-family: verdana; color: #FFFFFF"> EDIT</th>
+				<th style=" font-family: verdana; color: #FFFFFF"> DELETE</th>
 			</tr>
 
 			<c:forEach items="${categoryList }" var="category">
 				<tr>
-					<td>${category.id}</td>
-					<td>${category.name}</td>
-					<td>${category.description}</td>
-					<td><a href="<c:url value='category/edit/${category.id}' />">Edit</a></td>
-					<td><a href="<c:url value='category/remove/${category.id}' />">Delete</a></td>
+					<td style=" font-family: verdana; color: #FFFFFF">${category.id}</td>
+					<td style=" font-family: verdana; color: #FFFFFF">${category.name}</td>
+					<td style=" font-family: verdana; color: #FFFFFF">${category.description}</td>
+					<td style=" font-family: verdana; color: #FFFFFF"><a href="<c:url value='category/edit/${category.id}' />">Edit</a></td>
+					<td style=" font-family: verdana; color: #FFFFFF"><a href="<c:url value='category/remove/${category.id}' />">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>

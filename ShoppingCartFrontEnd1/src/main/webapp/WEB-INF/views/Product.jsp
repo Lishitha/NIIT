@@ -17,7 +17,7 @@
 
 	<table>
 		<tr>
-			<td><form:label path="id">
+			<td style=" font-family: verdana; color: #FFFFFF"><form:label path="id">
 					<spring:message text="ProductID" />
 				</form:label></td>
 			<c:choose>
@@ -35,51 +35,62 @@
 		</tr>
 
 		<tr>
-			<td><form:label path="name">
+			<td style=" font-family: verdana; color: #FFFFFF"><form:label path="name">
 					<spring:message text="ProductName"></spring:message>
 				</form:label></td>
 			<td><form:input path="name" required="true"></form:input></td>
 		</tr>
 
 		<tr>
-			<td><form:label path="description">
+			<td style=" font-family: verdana; color: #FFFFFF"><form:label path="description">
 					<spring:message text="ProductDescription"></spring:message>
 				</form:label></td>
 			<td><form:input path="description" required="true"></form:input></td>
 		</tr>
 
 		<tr>
-			<td><form:label path="price">
+			<td style=" font-family: verdana; color: #FFFFFF"><form:label path="price">
 					<spring:message text="ProductPrice"></spring:message>
 				</form:label></td>
 			<td><form:input path="description" required="true"></form:input></td>
 		</tr>
+		
+		<tr>
+				<!-- if the category is already exist, then edit -->
+				<td colspan="2"><c:if test="${!empty product.name }">
+						<input type="submit"
+							value="<spring:message text="Edit"></spring:message>">
+					</c:if> <c:if test="${empty product.name}">
+						<input type="submit"
+							value="<spring:message text="Add"></spring:message>">
+					</c:if></td>
+			</tr>
 	</table>
 	</form:form>
 	
-	<h2>LIST OF PRODUCTS</h2>
+	<h2 style=" font-family: verdana; color: #FFFFFF;text-align: center">LIST OF PRODUCTS</h2>
 	<c:if test="${!empty productList}">
 	<table>
 	<tr>
-				<th> ID</th>
-				<th> NAME</th>
-				<th> DESCRIPTION</th>
-				<th> PRICE</th>
-				<th> CATEGORY</th>
-				<th> SUPPLIER</th>
-				<th> EDIT</th>
-				<th> DELETE</th>
+				<th style=" font-family: verdana; color: #FFFFFF"> ID</th>
+				<th style=" font-family: verdana; color: #FFFFFF"> NAME</th>
+				<th style=" font-family: verdana; color: #FFFFFF"> DESCRIPTION</th>
+				<th style=" font-family: verdana; color: #FFFFFF"> PRICE</th>
+				<!-- <th> CATEGORY</th>
+				<th> SUPPLIER</th> -->
+				<th style=" font-family: verdana; color: #FFFFFF"> EDIT</th>
+				<th style=" font-family: verdana; color: #FFFFFF"> DELETE</th>
 			</tr>
 			<c:forEach items="${productList}" var="product">
 				<tr>
-					<td>${product.id}</td>
-					<td>${product.name}</td>
-					<td>${product.description}</td>
-					<td>${product.price}</td>
-					<td>${product.category.name}</td>
-					<td>${product.supplier.name}</td>
-					<td><a href="<c:url value='product/edit/${product.id}' />">Edit</a></td>
-					<td><a href="<c:url value='product/remove/${product.id}' />">Delete</a></td>
+					<td style=" font-family: verdana; color: #FFFFFF">${product.id}</td>
+					<td style=" font-family: verdana; color: #FFFFFF">${product.name}</td>
+					<td style=" font-family: verdana; color: #FFFFFF">${product.description}</td>
+					<td style=" font-family: verdana; color: #FFFFFF">${product.price}</td>
+					<!-- <td>${product.category.name}</td> 
+					<td>${product.supplier.name}</td>-->
+					<td style=" font-family: verdana; color: #FFFFFF"><a href="<c:url value='product/edit/${product.id}' />">Edit</a></td>
+					<td style=" font-family: verdana; color: #FFFFFF"><a href="<c:url value='product/remove/${product.id}' />">Delete</a></td>
 				</tr>
 			</c:forEach>
 	

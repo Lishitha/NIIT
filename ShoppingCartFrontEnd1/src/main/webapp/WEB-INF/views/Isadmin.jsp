@@ -22,11 +22,15 @@
 	<table>
 		<tr>
 			<td align="left"><a href="categories"
-				style="textfont-size: 200%; font-family: verdana; color: #FFFFFF">Manage Categories</a></td>
-			<td align="center"><a href="suppliers"
-				style="textfont-size: 200%; font-family: verdana; color: #FFFFFF">Manage Suppliers</a></td>
+				style="textfont-size: 200%; font-family: verdana; color: #FFFFFF">Manage
+					Categories</a></td>
 			<td align="right"><a href="products"
-				style="textfont-size: 200%; font-family: verdana; color: #FFFFFF">Manage Products</a></td>
+				style="textfont-size: 200%; font-family: verdana; color: #FFFFFF">Manage
+					Products</a></td>
+			<td align="center"><a href="suppliers"
+				style="textfont-size: 200%; font-family: verdana; color: #FFFFFF">Manage
+					Suppliers</a></td>
+
 		</tr>
 
 	</table>
@@ -47,7 +51,7 @@
 
 	</div>-->
 
-	
+
 </body>
 </html>
 
