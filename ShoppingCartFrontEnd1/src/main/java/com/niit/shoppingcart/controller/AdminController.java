@@ -43,23 +43,33 @@ public class AdminController {
 		return mv;
 	}
 
+	/*@RequestMapping(value="/editCategory/{id}")
+	public String editCategory(@PathVariable("id") String id, ModelMap model)
+	{
+		category=categoryDAO.get(id);
+		model.addAttribute("category", category);
+		model.addAttribute("categoryList",categoryDAO.list());
+		return "redirect:/category";
+	}*/
+	
+
 	@RequestMapping("/suppliers")
-	public ModelAndView product() {
-
-		ModelAndView mv = new ModelAndView("/Home");
-		mv.addObject("product", product);
-		mv.addObject("isAdminClickedProduct", "true");
-		mv.addObject("productList", productDAO.list());
-		return mv;
-	}
-
-	@RequestMapping("/products")
 	public ModelAndView supplier() {
 
 		ModelAndView mv = new ModelAndView("/Home");
 		mv.addObject("supplier", supplier);
 		mv.addObject("isAdminClickedSupplier", "True");
 		mv.addObject("supplierList", supplierDAO.list());
+		return mv;
+	}
+	
+	@RequestMapping("/products")
+	public ModelAndView product() {
+
+		ModelAndView mv = new ModelAndView("/Home");
+		mv.addObject("product", product);
+		mv.addObject("isAdminClickedProduct", "true");
+		mv.addObject("productList", productDAO.list());
 		return mv;
 	}
 

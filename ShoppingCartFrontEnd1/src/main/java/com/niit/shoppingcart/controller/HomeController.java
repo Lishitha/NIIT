@@ -24,12 +24,13 @@ public class HomeController {
 
 	@Autowired
 	private CategoryDAO categoryDAO;
-
+	
 	@Autowired
 	User user;
 
 	@Autowired
 	UserDAO userDAO;
+	
 
 	/*
 	 * @Autowired UserDetails userDetails;
@@ -38,14 +39,15 @@ public class HomeController {
 	@RequestMapping("/")
 	public ModelAndView myfun1(HttpSession session) {
 		ModelAndView mv = new ModelAndView("/Home");
-		/*
-		 * session.setAttribute("category", category);
-		 * session.setAttribute("categoryList", categoryDAO.list());
-		 */
-
-		return mv;
+		
+		 session.setAttribute("category", category);
+		 session.setAttribute("categoryList", categoryDAO.list());
+		 return mv;
 
 	}
+	
+	//TO EDIT CATEGORY
+	
 
 	@RequestMapping("/login")
 	public ModelAndView Login() {
@@ -126,5 +128,7 @@ public class HomeController {
 		mv.addObject("loggedOut", "true");
 		return mv;
 	}
+	
+	
 
 }
