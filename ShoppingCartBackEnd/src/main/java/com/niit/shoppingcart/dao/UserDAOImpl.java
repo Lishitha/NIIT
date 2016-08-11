@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.shoppingcart.model.User;
-import com.niit.shoppingcart.model.UserDetails;
 
 @Repository("userDAO")
 
@@ -26,15 +25,9 @@ public class UserDAOImpl implements UserDAO{
 	@Transactional
 	public void saveOrUpdate(User user) {
 		sessionFactory.getCurrentSession().saveOrUpdate(user);
-	};
-	
-	
-	@Transactional
-	public void saveOrUpdate(UserDetails userDetails) {
-		sessionFactory.getCurrentSession().saveOrUpdate(userDetails);
 	}
 	
-	
+		
 	@Transactional
 	public void delete(String id){
 		User UserToDelete=new User();
