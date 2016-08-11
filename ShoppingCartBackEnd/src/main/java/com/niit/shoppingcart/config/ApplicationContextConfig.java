@@ -15,10 +15,14 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.shoppingcart.dao.CategoryDAO;
+import com.niit.shoppingcart.dao.CategoryDAOImpl;
+import com.niit.shoppingcart.model.Cart;
 import com.niit.shoppingcart.model.Category;
 import com.niit.shoppingcart.model.Product;
 import com.niit.shoppingcart.model.Supplier;
 import com.niit.shoppingcart.model.User;
+
 
 @Configuration
 @ComponentScan("com.niit.shoppingcart")
@@ -38,6 +42,7 @@ public class ApplicationContextConfig {
 	
 	private Properties getHibernateProperties(){
 		Properties properties=new Properties();
+		properties.put("hibernate.show_sql","true");
 		properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 		return properties;
 		
@@ -53,14 +58,23 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClass(Supplier.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(User.class);
+		sessionBuilder.addAnnotatedClass(Cart.class);
+		//sessionBuilder.addAnnotatedClass(UserDetails.class);
 		return sessionBuilder.buildSessionFactory();
-		
-		
 	}
+	
 	@Autowired
 	@Bean(name="transactionManager")
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory){
 		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
 		return transactionManager;
 	}
+	
+	
+	@Autowired
+	@Bean(name="categoryDAO")
+	public CategoryDAO getCategoryDAO(SessionFactory sessionFactory){
+		return new CategoryDAOImpl(sessionFactory);
+	}
+	
 }
