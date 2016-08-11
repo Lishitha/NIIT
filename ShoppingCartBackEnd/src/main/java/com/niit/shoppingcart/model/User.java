@@ -13,12 +13,43 @@ public class User {
 	
 	@Id
 	private String id;
-
+	
+	private String name;
+	
 	private String password;
+	
+	private String mailID;
+	
+	private String address;
+	
+	private String contactNumber;
 	
 	private boolean isAdmin;
 	
-	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getMailID() {
+		return mailID;
+	}
+	public void setMailID(String mailID) {
+		this.mailID = mailID;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getContactNumber() {
+		return contactNumber;
+	}
+	public void setContactNumber(String contactNumber) {
+		this.contactNumber = contactNumber;
+	}
 
 	public String getId() {
 		return id;
