@@ -95,7 +95,7 @@
 	</nav>
 
 
-
+<div id="first">
 	<table width="100%">
 		<tr>
 
@@ -120,7 +120,7 @@
 
 		</tr>
 	</table>
-
+</div>
 
 	<div id="logout">
 		<c:if test="${loggedOut==true}">
@@ -154,18 +154,21 @@
 
 	<div id="category">
 		<c:if test="${isAdminCLickedCategory==true }">
+		<%@ include file="Isadmin.jsp"%>
 			<%@ include file="Category.jsp"%>
 		</c:if>
 	</div>
 
 	<div id="product">
 		<c:if test="${isAdminClickedProduct==true }">
+		<%@ include file="Isadmin.jsp"%>
 			<%@ include file="Product.jsp"%>
 		</c:if>
 	</div>
 
 	<div id="supplier">
 		<c:if test="${isAdminClickedSupplier==true }">
+		<%@ include file="Isadmin.jsp"%>
 			<%@ include file="Supplier.jsp"%>
 		</c:if>
 	</div>

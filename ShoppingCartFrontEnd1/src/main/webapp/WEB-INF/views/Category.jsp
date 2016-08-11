@@ -8,9 +8,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Category</title>
+
 </head>
 <body>
 <h2 style="text-align: center; font-family: verdana; color: #FFFFFF">ADD CATEGORY</h2>
+
 	 <c:url var="addCategory" value="to_add_category"></c:url>
 	<form:form action="${addCategory }" commandName="category">
 
@@ -34,6 +36,7 @@
 			</tr>
 
 			<tr>
+					<form:input path="id" hidden="true"  />
 				<td style=" font-family: verdana; color: #FFFFFF"><form:label path="name">
 						<spring:message text="Name"></spring:message>
 					</form:label></td>
@@ -78,8 +81,8 @@
 					<td style=" font-family: verdana; color: #FFFFFF">${category.id}</td>
 					<td style=" font-family: verdana; color: #FFFFFF">${category.name}</td>
 					<td style=" font-family: verdana; color: #FFFFFF">${category.description}</td>
-					<td style=" font-family: verdana; color: #FFFFFF"><a href="<c:url value='category/edit/${category.id}' />">Edit</a></td>
-					<td style=" font-family: verdana; color: #FFFFFF"><a href="<c:url value='category/remove/${category.id}' />">Delete</a></td>
+					<td style=" font-family: verdana; color: #FFFFFF"><a href="<c:url value='editCategory/${category.id}' />">Edit</a></td>
+					<td style=" font-family: verdana; color: #FFFFFF"><a href="<c:url value='deleteCategory/${category.id}' />">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>

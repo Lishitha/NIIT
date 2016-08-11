@@ -82,9 +82,9 @@
 					<td style="font-family: verdana; color: #FFFFFF">${supplier.name}</td>
 					<td style="font-family: verdana; color: #FFFFFF">${supplier.address}</td>
 					<td style="font-family: verdana; color: #FFFFFF"><a
-						href="<c:url value='supplier/edit/${supplier.id}' />">Edit</a></td>
+						href="<c:url value='editSupplier/${supplier.id}' />">Edit</a></td>
 					<td style="font-family: verdana; color: #FFFFFF"><a
-						href="<c:url value='supplier/remove/${supplier.id}' />">Delete</a></td>
+						href="<c:url value='deleteSupplier/${supplier.id}' />">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>
